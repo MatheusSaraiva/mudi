@@ -10,28 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Oferta {
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private BigDecimal valor;
 	
-	private LocalDate dateDaEntrega;
+	private LocalDate dataDaEntrega;
 	
 	private String comentario;
-
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Pedido pedido;
-	
-	public Pedido getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
-	}
 
 	public Long getId() {
 		return id;
@@ -49,12 +43,12 @@ public class Oferta {
 		this.valor = valor;
 	}
 
-	public LocalDate getDateDaEntrega() {
-		return dateDaEntrega;
+	public LocalDate getDataDaEntrega() {
+		return dataDaEntrega;
 	}
 
-	public void setDateDaEntrega(LocalDate dateDaEntrega) {
-		this.dateDaEntrega = dateDaEntrega;
+	public void setDataDaEntrega(LocalDate dataDaEntrega) {
+		this.dataDaEntrega = dataDaEntrega;
 	}
 
 	public String getComentario() {
@@ -63,6 +57,14 @@ public class Oferta {
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 	
 	

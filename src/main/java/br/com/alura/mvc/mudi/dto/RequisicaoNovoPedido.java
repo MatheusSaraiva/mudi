@@ -1,21 +1,21 @@
 package br.com.alura.mvc.mudi.dto;
 
-
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 
 import br.com.alura.mvc.mudi.model.Pedido;
 import br.com.alura.mvc.mudi.model.StatusPedido;
 
-
 public class RequisicaoNovoPedido {
-	@NotEmpty
+	
+	@NotBlank
 	private String nomeProduto;
-	@NotEmpty
+	
+	@NotBlank
 	private String urlProduto;
-	@NotEmpty
+	
+	@NotBlank
 	private String urlImagem;
 	private String descricao;
-	
 	
 	public String getNomeProduto() {
 		return nomeProduto;
